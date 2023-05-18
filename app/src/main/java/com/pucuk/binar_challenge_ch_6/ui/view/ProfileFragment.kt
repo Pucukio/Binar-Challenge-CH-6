@@ -15,7 +15,9 @@ import com.google.firebase.ktx.Firebase
 import com.pucuk.binar_challenge_ch_6.R
 import com.pucuk.binar_challenge_ch_6.databinding.FragmentProfileBinding
 import com.pucuk.binar_challenge_ch_6.ui.viewmodel.ProfileViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     private  val viewModel: ProfileViewModel by viewModels()
