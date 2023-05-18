@@ -15,7 +15,6 @@ import com.pucuk.binar_challenge_ch_6.databinding.FragmentRegisterBinding
 import com.pucuk.binar_challenge_ch_6.ui.viewmodel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class RegisterFragment : Fragment() {
     private val viewModel: RegisterViewModel by viewModels()
     private var _binding: FragmentRegisterBinding? = null

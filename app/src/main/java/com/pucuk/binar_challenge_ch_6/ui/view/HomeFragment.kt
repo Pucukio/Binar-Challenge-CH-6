@@ -16,7 +16,6 @@ import com.pucuk.binar_challenge_ch_6.ui.adapter.HomeAdapter
 import com.pucuk.binar_challenge_ch_6.ui.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     lateinit var _binding: FragmentHomeBinding
