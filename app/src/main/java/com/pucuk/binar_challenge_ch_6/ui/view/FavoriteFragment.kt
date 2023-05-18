@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.pucuk.binar_challenge_ch_6.R
 import com.pucuk.binar_challenge_ch_6.ui.viewmodel.FavoriteViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FavoriteFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

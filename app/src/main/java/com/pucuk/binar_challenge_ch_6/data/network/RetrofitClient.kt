@@ -1,18 +1,41 @@
 package com.pucuk.binar_challenge_ch_6.data.network
 
 import com.google.android.datatransport.runtime.dagger.Module
+import com.google.android.datatransport.runtime.dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
+@Module
+@InstallIn(SingletonComponent::class)
 object RetrofitClient {
     const val  BASE_URL ="https://api.themoviedb.org/3/"
-    val instance : ApiClient by lazy {
-        val retrofit= Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        retrofit.create(ApiClient::class.java)
+
+        private val logging: HttpLoggingInterceptor
+            get() {
+                val httpLoggingInterceptor = HttpLoggingInterceptor()
+                return httpLoggingInterceptor.apply {
+                    httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+                }
+            }
+
+        private val client = OkHttpClient.Builder().addInterceptor(logging).build()
+
+        @Singleton
+        @Provides
+        fun provideRetrofit(): Retrofit =
+            Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+
+        @Singleton
+        @Provides
+        fun provideNewsApi(retrofit: Retrofit): ApiClient =
+            retrofit.create(ApiClient::class.java)
     }
-}

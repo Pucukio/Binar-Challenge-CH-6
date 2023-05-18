@@ -17,6 +17,7 @@ import com.pucuk.binar_challenge_ch_6.databinding.FragmentLoginBinding
 import com.pucuk.binar_challenge_ch_6.ui.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private val viewModel: LoginViewModel by viewModels()
     lateinit var _binding: FragmentLoginBinding

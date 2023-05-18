@@ -12,7 +12,9 @@ import com.bumptech.glide.Glide
 import com.pucuk.binar_challenge_ch_6.R
 import com.pucuk.binar_challenge_ch_6.databinding.FragmentDetailBinding
 import com.pucuk.binar_challenge_ch_6.ui.viewmodel.DetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailFragment : Fragment() {
     private  val viewModel: DetailViewModel by viewModels()
     lateinit var _binding: FragmentDetailBinding
