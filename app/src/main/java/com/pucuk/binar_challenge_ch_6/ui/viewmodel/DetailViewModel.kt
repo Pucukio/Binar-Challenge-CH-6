@@ -5,13 +5,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.pucuk.binar_challenge_ch_6.data.model.ResponseDetailFilm
-import com.pucuk.binar_challenge_ch_6.data.network.RetrofitClient
+import com.pucuk.binar_challenge_ch_6.data.network.ApiClient
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class DetailViewModel : ViewModel() {
+@HiltViewModel
+class DetailViewModel @Inject constructor(private val api: ApiClient) : ViewModel() {
     private val _movie = MutableLiveData<ResponseDetailFilm>()
     val movie: LiveData<ResponseDetailFilm> = _movie
     fun getFilm(movieId: Int) = viewModelScope.launch {
-        _movie.postValue(RetrofitClient.instance.getDetailFilm(movieId))
+        _movie.postValue(api.getDetailFilm(movieId))
     }
 }

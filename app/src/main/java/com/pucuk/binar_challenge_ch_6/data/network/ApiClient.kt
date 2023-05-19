@@ -7,7 +7,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiClient {
-
     @GET("movie/popular?api_key=fba632cdd6813ba053d5c4b18722f59c")
     suspend fun getAllFilmPopular() : ResponseFilm
 

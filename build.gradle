@@ -15,7 +15,7 @@ buildscript {
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.5'
 
     }
-    ext.hilt_version = '2.45'
+    ext.hilt_version = '2.44'
     dependencies {
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
     }

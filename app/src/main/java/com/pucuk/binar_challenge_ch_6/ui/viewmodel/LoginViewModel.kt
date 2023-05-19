@@ -6,8 +6,13 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.pucuk.binar_challenge_ch_6.data.network.ApiClient
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class LoginViewModel : ViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(): ViewModel() {
+
     private val _login = MutableLiveData<String>()
     val login: LiveData<String> = _login
 

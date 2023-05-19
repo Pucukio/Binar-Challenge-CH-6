@@ -17,7 +17,6 @@ class SplashViewModel(private val app: Application): AndroidViewModel(app) {
     private fun reload(navController: NavController) {
         auth.currentUser?.reload()?.addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                val user = auth.currentUser
                 navController.navigate(R.id.action_splashFragment_to_loginFragment)
             } else {
                 FirebaseAuth.getInstance().signOut()
