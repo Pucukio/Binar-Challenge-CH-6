@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkClient {
     private const val BASE_URL = "https://api.themoviedb.org/3/"
-    const val API_KEY = "fba632cdd6813ba053d5c4b18722f59c"
+//    const val API_KEY = "fba632cdd6813ba053d5c4b18722f59c"
 
     private val logging: HttpLoggingInterceptor
         get() {

@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.pucuk.binar_challenge_ch_6.R
+import com.pucuk.binar_challenge_ch_6.data.database.DatabaseFav
 import com.pucuk.binar_challenge_ch_6.databinding.FragmentDetailBinding
 import com.pucuk.binar_challenge_ch_6.ui.viewmodel.DetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,6 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class DetailFragment : Fragment() {
     private  val viewModel: DetailViewModel by viewModels()
     lateinit var _binding: FragmentDetailBinding
+    private var favDatabase: DatabaseFav? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,7 +37,17 @@ class DetailFragment : Fragment() {
         _binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_detailFragment_to_homeFragment)
         }
+        _binding.topAppBar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.favorite -> {
+                    findNavController().navigate(R.id.action_homeFragment_to_favoriteFragment)
+                    true
+                }
+                else -> false
+            }
+        }
     }
+
     private fun bind() {
         viewModel.movie.observe(viewLifecycleOwner){
             val imageUrl = "https://image.tmdb.org/t/p/w500"

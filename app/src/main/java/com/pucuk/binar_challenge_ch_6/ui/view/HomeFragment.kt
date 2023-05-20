@@ -46,6 +46,10 @@ class HomeFragment : Fragment() {
         }
         _binding.topAppBar.setOnMenuItemClickListener {
             when (it.itemId) {
+                R.id.favorite -> {
+                    findNavController().navigate(R.id.action_homeFragment_to_favoriteFragment)
+                    true
+                }
                 R.id.about -> {
                     findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
                     true
