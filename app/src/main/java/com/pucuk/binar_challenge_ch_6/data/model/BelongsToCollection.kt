@@ -1,8 +1,15 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused", "unused"
+)
+
 package com.pucuk.binar_challenge_ch_6.data.model
 
 
 import com.google.gson.annotations.SerializedName
 
+@Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused", "unused", "unused", "unused", "unused"
+)
 data class BelongsToCollection(
     @SerializedName("backdrop_path")
     val backdropPath: String,

@@ -27,10 +27,11 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_detail"
-            android:layout_width="175dp"
-            android:layout_height="260dp"
+            android:layout_width="195dp"
+            android:layout_height="250dp"
             android:paddingTop="16dp"
             android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:src="@drawable/sample"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -94,6 +95,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="Description"
             android:textSize="18sp"
             android:textStyle="bold"
