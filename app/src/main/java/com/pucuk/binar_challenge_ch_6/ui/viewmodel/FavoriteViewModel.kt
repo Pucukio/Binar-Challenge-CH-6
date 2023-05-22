@@ -3,14 +3,23 @@ package com.pucuk.binar_challenge_ch_6.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.pucuk.binar_challenge_ch_6.data.database.DaoFav
-import com.pucuk.binar_challenge_ch_6.data.database.DataFav
+import com.pucuk.binar_challenge_ch_6.data.local.database.FavoriteEntity
+import com.pucuk.binar_challenge_ch_6.data.repository.LocalRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class FavoriteViewModel @Inject constructor(private val daoFav: DaoFav) : ViewModel() {
+@HiltViewModel
+class FavoriteViewModel @Inject constructor(private val localRepository: LocalRepository) :
+    ViewModel() {
+
+    private val _favorite = MutableLiveData<List<FavoriteEntity>>()
+    val favorite: LiveData<List<FavoriteEntity>> = _favorite
+
     private val _user = MutableLiveData<FirebaseUser?>()
     val user: LiveData<FirebaseUser?> = _user
 
@@ -20,5 +29,9 @@ class FavoriteViewModel @Inject constructor(private val daoFav: DaoFav) : ViewMo
         } else {
             _user.postValue(null)
         }
+    }
+
+    fun getAllFavorites(uuid: String) = viewModelScope.launch {
+        _favorite.postValue(localRepository.getFavoriteTickets(uuid))
     }
 }

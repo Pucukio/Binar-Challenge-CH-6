@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection", "SpellCheckingInspection")
+
 package com.pucuk.binar_challenge_ch_6
 
 import androidx.test.platform.app.InstrumentationRegistry
@@ -13,6 +15,7 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
+@Suppress("SpellCheckingInspection", "SpellCheckingInspection")
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
     @Test
