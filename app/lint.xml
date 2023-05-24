@@ -6,5 +6,9 @@
     <issue id="Overdraw" severity="ignore" />
     <issue id="UnusedResources" severity="ignore" />
     <issue id="IconLocation" severity="ignore" />
+    <issue id="UnknownNullness">
+        <option name="ignore-deprecated" value="false" />
+    </issue>
+
 
 </lint>

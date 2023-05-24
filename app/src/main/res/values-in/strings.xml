@@ -8,8 +8,8 @@
     <string name="update">Perbaharui</string>
     <string name="register">Daftar</string>
     <string name="login">Masuk</string>
-    <string name="sign_up">Daftar</string>
-    <string name="sign_in">Masuk</string>
+    <string name="sign_up">Daftar </string>
+    <string name="sign_in">Masuk </string>
     <string name="profile">Data Diri</string>
     <string name="search">Cari</string>
     <string name="favorite">Favorite</string>
@@ -20,8 +20,8 @@
     <string name="register_here">Daftar Disini</string>
     <string name="have_account">Sudah Punya Akun?</string>
     <string name="not_registered_yet">Belum Daftar?</string>
-    <string name="type_your_username">Masukkan Username</string>
-    <string name="type_your_fullname">Masukkan Nama Lengkap</string>
+    <string name="type_your_username">Masukkan Username Anda</string>
+    <string name="type_your_fullname">Masukkan Nama Lengkap Anda</string>
     <string name="type_your_email">Masukkan Email</string>
     <string name="type_your_password">Masukkan Kata Sandi</string>
     <string name="type_your_confirmpassword">Masukkan Ulang Kata Sandi</string>

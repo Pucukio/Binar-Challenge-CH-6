@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
     private val viewModel: LoginViewModel by viewModels()
-    lateinit var _binding: FragmentLoginBinding
+    private lateinit var _binding: FragmentLoginBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

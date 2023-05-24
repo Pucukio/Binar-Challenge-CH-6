@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SplashFragment : Fragment() {
     private  val viewModel: SplashViewModel by viewModels()
-    lateinit var _binding: FragmentSplashBinding
+    private lateinit var _binding: FragmentSplashBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
